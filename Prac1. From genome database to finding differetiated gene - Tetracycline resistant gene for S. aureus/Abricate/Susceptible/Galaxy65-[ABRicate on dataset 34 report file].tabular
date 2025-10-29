@@ -1,0 +1,6 @@
+#FILE	SEQUENCE	START	END	STRAND	GENE	COVERAGE	COVERAGE_MAP	GAPS	%COVERAGE	%IDENTITY	DATABASE	ACCESSION	PRODUCT	RESISTANCE
+GCA_040254855.1_BSN50_Closure_genomic.fna	CP158203.1	39079	41085	-	mecA_6	1-2007/2007	===============	0/0	100.00	100.00	resfinder	BX571856	mecA	Amoxicillin;Amoxicillin+Clavulanic_acid;Ampicillin;Ampicillin+Clavulanic_acid;Cefepime;Cefixime;Cefotaxime;Cefoxitin;Ceftazidime;Ertapenem;Imipenem;Meropenem;Piperacillin;Piperacillin+Tazobactam
+GCA_040254855.1_BSN50_Closure_genomic.fna	CP158205.1	1861	2655	+	aph(3')-III_1	1-795/795	===============	0/0	100.00	100.00	resfinder	M26832	aph(3')-III	Amikacin
+GCA_040254855.1_BSN50_Closure_genomic.fna	CP158205.1	7956	8843	+	blaZ_79	1-888/888	===============	0/0	100.00	99.89	resfinder	KU607584	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_040254855.1_BSN50_Closure_genomic.fna	CP158205.1	19817	20716	-	mph(C)_2	1-900/900	===============	0/0	100.00	100.00	resfinder	AF167161	mph(C)	Erythromycin;Spiramycin;Telithromycin
+GCA_040254855.1_BSN50_Closure_genomic.fna	CP158205.1	20815	22281	-	msr(A)_1	1-1467/1467	===============	0/0	100.00	98.98	resfinder	X52085	msr(A)	Erythromycin;Azithromycin;Telithromycin;Quinupristin;Pristinamycin_IA;Virginiamycin_S

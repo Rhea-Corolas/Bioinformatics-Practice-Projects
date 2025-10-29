@@ -1,0 +1,9 @@
+#FILE	SEQUENCE	START	END	STRAND	GENE	COVERAGE	COVERAGE_MAP	GAPS	%COVERAGE	%IDENTITY	DATABASE	ACCESSION	PRODUCT	RESISTANCE
+GCA_032332035.2_PDT001830776.2_genomic.fna	ABNHNT020000001.1	176355	177242	+	blaZ_78	1-888/888	===============	0/0	100.00	99.66	resfinder	KU607301	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_032332035.2_PDT001830776.2_genomic.fna	ABNHNT020000001.1	181137	181919	+	ant(9)-Ia_1	1-783/783	===============	0/0	100.00	100.00	resfinder	X02588	ant(9)-Ia	
+GCA_032332035.2_PDT001830776.2_genomic.fna	ABNHNT020000001.1	182045	182776	-	erm(A)_1	1-732/732	===============	0/0	100.00	100.00	resfinder	X03216	erm(A)	Erythromycin;Lincomycin;Clindamycin;Quinupristin;Pristinamycin_IA;Virginiamycin_S
+GCA_032332035.2_PDT001830776.2_genomic.fna	ABNHNT020000010.1	15051	16970	-	tet(M)_7	1-1920/1920	===============	0/0	100.00	100.00	resfinder	FN433596	tet(M)	Doxycycline;Tetracycline;Minocycline
+GCA_032332035.2_PDT001830776.2_genomic.fna	ABNHNT020000019.1	4767	5498	+	erm(A)_1	1-732/732	===============	0/0	100.00	100.00	resfinder	X03216	erm(A)	Erythromycin;Lincomycin;Clindamycin;Quinupristin;Pristinamycin_IA;Virginiamycin_S
+GCA_032332035.2_PDT001830776.2_genomic.fna	ABNHNT020000019.1	5624	6406	-	ant(9)-Ia_1	1-783/783	===============	0/0	100.00	100.00	resfinder	X02588	ant(9)-Ia	
+GCA_032332035.2_PDT001830776.2_genomic.fna	ABNHNT020000019.1	10301	11188	-	blaZ_78	1-888/888	===============	0/0	100.00	99.66	resfinder	KU607301	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_032332035.2_PDT001830776.2_genomic.fna	ABNHNT020000020.1	26611	28530	+	tet(M)_7	1-1920/1920	===============	0/0	100.00	100.00	resfinder	FN433596	tet(M)	Doxycycline;Tetracycline;Minocycline

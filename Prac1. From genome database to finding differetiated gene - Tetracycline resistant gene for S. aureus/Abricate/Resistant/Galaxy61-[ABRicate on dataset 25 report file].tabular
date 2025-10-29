@@ -1,0 +1,15 @@
+#FILE	SEQUENCE	START	END	STRAND	GENE	COVERAGE	COVERAGE_MAP	GAPS	%COVERAGE	%IDENTITY	DATABASE	ACCESSION	PRODUCT	RESISTANCE
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000003.1	417	1883	+	msr(A)_1	1-1467/1467	===============	0/0	100.00	98.98	resfinder	X52085	msr(A)	Erythromycin;Azithromycin;Telithromycin;Quinupristin;Pristinamycin_IA;Virginiamycin_S
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000003.1	1982	2881	+	mph(C)_2	1-900/900	===============	0/0	100.00	99.89	resfinder	AF167161	mph(C)	Erythromycin;Spiramycin;Telithromycin
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000009.1	70197	71084	+	blaZ_138	1-888/888	===============	0/0	100.00	100.00	resfinder	CP003979	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000017.1	11361	13367	+	mecA_6	1-2007/2007	===============	0/0	100.00	100.00	resfinder	BX571856	mecA	Amoxicillin;Amoxicillin+Clavulanic_acid;Ampicillin;Ampicillin+Clavulanic_acid;Cefepime;Cefixime;Cefotaxime;Cefoxitin;Ceftazidime;Ertapenem;Imipenem;Meropenem;Piperacillin;Piperacillin+Tazobactam
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000019.1	1348	2142	+	aph(3')-III_1	1-795/795	===============	0/0	100.00	100.00	resfinder	M26832	aph(3')-III	Amikacin
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000020.1	1098	2477	+	tet(K)_1	1-1380/1380	===============	0/0	100.00	100.00	resfinder	U38656	tet(K)	Doxycycline;Tetracycline
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000022.1	128	898	+	aadD_1	1-771/771	===============	0/0	100.00	99.74	resfinder	AF181950	aadD	Amikacin;Tobramycin
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000032.1	105	992	-	blaZ_138	1-888/888	===============	0/0	100.00	100.00	resfinder	CP003979	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000035.1	458	1924	+	msr(A)_1	1-1467/1467	===============	0/0	100.00	98.98	resfinder	X52085	msr(A)	Erythromycin;Azithromycin;Telithromycin;Quinupristin;Pristinamycin_IA;Virginiamycin_S
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000035.1	2023	2922	+	mph(C)_2	1-900/900	===============	0/0	100.00	99.89	resfinder	AF167161	mph(C)	Erythromycin;Spiramycin;Telithromycin
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000036.1	1396	3402	+	mecA_6	1-2007/2007	===============	0/0	100.00	100.00	resfinder	BX571856	mecA	Amoxicillin;Amoxicillin+Clavulanic_acid;Ampicillin;Ampicillin+Clavulanic_acid;Cefepime;Cefixime;Cefotaxime;Cefoxitin;Ceftazidime;Ertapenem;Imipenem;Meropenem;Piperacillin;Piperacillin+Tazobactam
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000037.1	1389	2183	+	aph(3')-III_1	1-795/795	===============	0/0	100.00	100.00	resfinder	M26832	aph(3')-III	Amikacin
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000038.1	1139	2518	+	tet(K)_1	1-1380/1380	===============	0/0	100.00	100.00	resfinder	U38656	tet(K)	Doxycycline;Tetracycline
+GCA_032331175.2_PDT001830847.2_genomic.fna	ABNHMA020000040.1	169	939	+	aadD_1	1-771/771	===============	0/0	100.00	99.74	resfinder	AF181950	aadD	Amikacin;Tobramycin

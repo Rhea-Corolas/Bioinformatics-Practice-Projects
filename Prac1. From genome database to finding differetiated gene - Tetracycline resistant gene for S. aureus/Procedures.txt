@@ -1,0 +1,10 @@
+NCBI Assembly -> download pathogen/isolate browser _-> Susceptible&Resistant
+	|
+	|
+	|
+	|
+UseGalaxy -> Abricate -> Abricate Summary
+	|	 -> Prokka
+	|	 -> Roary
+	|
+Next Steps

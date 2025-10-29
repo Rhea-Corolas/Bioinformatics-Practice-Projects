@@ -1,0 +1,11 @@
+#FILE	SEQUENCE	START	END	STRAND	GENE	COVERAGE	COVERAGE_MAP	GAPS	%COVERAGE	%IDENTITY	DATABASE	ACCESSION	PRODUCT	RESISTANCE
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000009.1	26727	27614	-	blaZ_133	1-888/888	===============	0/0	100.00	100.00	resfinder	AIDT01000014	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000019.1	7639	8526	+	blaZ_79	1-888/888	===============	0/0	100.00	99.21	resfinder	KU607584	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000022.1	354	1733	+	tet(K)_1	1-1380/1380	===============	0/0	100.00	100.00	resfinder	U38656	tet(K)	Doxycycline;Tetracycline
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000023.1	476	1210	-	erm(C)_13	1-735/735	===============	0/0	100.00	100.00	resfinder	M13761	erm(C)	Erythromycin;Lincomycin;Clindamycin;Quinupristin;Pristinamycin_IA;Virginiamycin_S
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000024.1	432	1226	+	aph(3')-III_1	1-795/795	===============	0/0	100.00	100.00	resfinder	M26832	aph(3')-III	Amikacin
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000037.1	397	1284	+	blaZ_79	1-888/888	===============	0/0	100.00	99.21	resfinder	KU607584	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000039.1	395	1774	+	tet(K)_1	1-1380/1380	===============	0/0	100.00	100.00	resfinder	U38656	tet(K)	Doxycycline;Tetracycline
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000040.1	1310	2044	+	erm(C)_13	1-735/735	===============	0/0	100.00	100.00	resfinder	M13761	erm(C)	Erythromycin;Lincomycin;Clindamycin;Quinupristin;Pristinamycin_IA;Virginiamycin_S
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000043.1	397	1284	+	blaZ_133	1-888/888	===============	0/0	100.00	100.00	resfinder	AIDT01000014	blaZ	Amoxicillin;Ampicillin;Penicillin;Piperacillin
+GCA_031835035.2_PDT001845656.2_genomic.fna	ABMUMO020000044.1	473	1267	+	aph(3')-III_1	1-795/795	===============	0/0	100.00	100.00	resfinder	M26832	aph(3')-III	Amikacin
