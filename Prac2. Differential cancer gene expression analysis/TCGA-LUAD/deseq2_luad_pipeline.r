@@ -1,6 +1,6 @@
 # deseq2_luad_pipeline.R
 # 说明：对你生成的 LUAD 原始 counts 矩阵做差异表达分析（Tumor vs Normal）
-# 输出：DESeq2 结果表（带 lfcShrink）、火山图、PCA、top gene heatmap、GO 富集结果
+# 输出：DESeq2 结果表（带 lfcShrink）、火山图、PCA、top gene heatmap、GO 富集结果与可视化
 
 # -----------------------
 # 1) 安装/载入包（仅第一次需要 run 下面安装部分）
@@ -78,7 +78,6 @@ if(length(missing_in_counts)>0){
 counts_mat <- counts_df[, sample_ids]
 
 # 确保计数为整数（DESeq2 需要原始整数 counts）
-# 若你的文件是字符型，需要转成 numeric -> integer
 counts_mat <- apply(counts_mat, 2, function(x) as.integer(round(as.numeric(x))))
 rownames(counts_mat) <- rownames(counts_df)
 
@@ -103,7 +102,6 @@ dds <- DESeqDataSetFromMatrix(countData = counts_mat,
 
 # -----------------------
 # 6) 预过滤（去掉低表达基因，常见阈值：至少在 n 样本中 counts >= 10）
-#    原理：去除极低表达基因，减少多重检验负担，提高统计能力
 # -----------------------
 keep <- rowSums(counts(dds) >= 10) >= 5   # 至少 5 个样本表达量 >=10，可调整
 dds <- dds[keep, ]
@@ -155,7 +153,6 @@ cat("PCA 图已保存\n")
 # -----------------------
 # 11) 火山图（使用 EnhancedVolcano 或 ggplot2）
 # -----------------------
-# EnhancedVolcano 更直观，若无可退回 ggplot2
 pdf(file.path(outdir, "volcano_enhancedvolcano.pdf"), width = 7, height = 7)
 EnhancedVolcano(res_df,
                 lab = res_df$gene_name,
@@ -192,17 +189,12 @@ cat("热图已保存\n")
 
 # -----------------------
 # 13) 基因ID转换（从基因名 -> ENTREZ ID）以便做 clusterProfiler 富集
-#     这里以 gene_name（symbol）映射到 ENTREZID
 # -----------------------
-# 先去掉重复 symbol
 res_df_nodup <- res_df %>% distinct(gene_name, .keep_all = TRUE)
-
-# 使用 org.Hs.eg.db 映射 SYMBOL -> ENTREZID
 map_res <- AnnotationDbi::select(org.Hs.eg.db,
                                  keys = res_df_nodup$gene_name,
                                  columns = c("ENTREZID","SYMBOL"),
                                  keytype = "SYMBOL")
-# 合并
 res_mapped <- left_join(res_df_nodup, map_res, by = c("gene_name" = "SYMBOL"))
 
 # -----------------------
@@ -222,6 +214,12 @@ if(length(deg_entrez) >= 10){
                   readable = TRUE)
   write.csv(as.data.frame(ego), file = file.path(outdir, "GO_BP_enrichment.csv"), row.names = FALSE)
   cat("GO 富集结果已保存\n")
+  
+  # GO 富集结果可视化
+  pdf(file.path(outdir, "GO_enrichment_BP.pdf"), width = 7, height = 7)
+  barplot(ego, showCategory = 20)
+  dev.off()
+  cat("GO 富集图已保存\n")
 } else {
   cat("差异基因数太少，跳过 GO 富集（需要 >=10 个 ENTREZID）\n")
 }
