@@ -36,9 +36,9 @@ library(EnhancedVolcano)
 # -----------------------
 # 2) 路径：修改为你本地路径（如果已在同一目录可使用相对路径）
 # -----------------------
-counts_path <- "E:/Bioinfo/Projects/LUAD_counts_matrix.csv"    # 你生成的 counts 矩阵
-sampleinfo_path <- "E:/Bioinfo/Projects/LUAD_sample_info.csv"  # 你生成的样本信息表
-outdir <- "E:/Bioinfo/Projects/DESeq2_results"                 # 输出目录
+counts_path <- "E:/Bioinfo/Projects/Prac2. Differential cancer gene expression analysis/TCGA-LUAD/LUAD_counts_matrix.csv"    # 你生成的 counts 矩阵
+sampleinfo_path <- "E:/Bioinfo/Projects/Prac2. Differential cancer gene expression analysis/TCGA-LUAD/LUAD_sample_info.csv"  # 你生成的样本信息表
+outdir <- "E:/Bioinfo/Projects/Prac2. Differential cancer gene expression analysis/TCGA-LUAD/DESeq2_results"                 # 输出目录
 dir.create(outdir, showWarnings = FALSE, recursive = TRUE)
 
 # -----------------------
