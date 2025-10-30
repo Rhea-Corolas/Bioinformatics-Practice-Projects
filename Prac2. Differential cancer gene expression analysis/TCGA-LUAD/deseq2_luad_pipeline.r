@@ -216,9 +216,10 @@ if(length(deg_entrez) >= 10){
   cat("GO 富集结果已保存\n")
   
   # GO 富集结果可视化
-  pdf(file.path(outdir, "GO_enrichment_BP.pdf"), width = 7, height = 7)
-  barplot(ego, showCategory = 20)
+  pdf(file.path(outdir, "GO_enrichment_dotplot.pdf"), width = 7, height = 7)
+  dotplot(ego, showCategory = 20, title = "GO BP enrichment (dotplot)")
   dev.off()
+
   cat("GO 富集图已保存\n")
 } else {
   cat("差异基因数太少，跳过 GO 富集（需要 >=10 个 ENTREZID）\n")
