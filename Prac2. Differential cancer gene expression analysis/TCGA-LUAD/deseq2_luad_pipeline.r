@@ -204,7 +204,7 @@ deg_entrez <- res_mapped %>%
   filter(!is.na(ENTREZID), padj < 0.05 & abs(log2FoldChange) >= 1) %>%
   pull(ENTREZID) %>% unique()
 
-if(length(deg_entrez) >= 10){
+if(length(deg_entrez) >= 10) {
   ego <- enrichGO(gene = deg_entrez,
                   OrgDb = org.Hs.eg.db,
                   keyType = "ENTREZID",
@@ -214,16 +214,54 @@ if(length(deg_entrez) >= 10){
                   readable = TRUE)
   write.csv(as.data.frame(ego), file = file.path(outdir, "GO_BP_enrichment.csv"), row.names = FALSE)
   cat("GO 富集结果已保存\n")
-  
-  # GO 富集结果可视化
-  pdf(file.path(outdir, "GO_enrichment_dotplot.pdf"), width = 7, height = 7)
-  dotplot(ego, showCategory = 20, title = "GO BP enrichment (dotplot)")
-  dev.off()
 
-  cat("GO 富集图已保存\n")
+  # 1) Try clusterProfiler built-ins via cairo_pdf (more robust)
+  try({
+    cairo_pdf(file.path(outdir, "GO_enrichment_barplot_cairo.pdf"), width = 8, height = 6)
+    barplot(ego, showCategory = 20, title = "Top 20 GO Biological Processes")
+    dev.off()
+  }, silent = TRUE)
+
+  try({
+    cairo_pdf(file.path(outdir, "GO_enrichment_dotplot_cairo.pdf"), width = 8, height = 6)
+    dotplot(ego, showCategory = 20, title = "GO BP Enrichment (Dotplot)")
+    dev.off()
+  }, silent = TRUE)
+
+  # 2) Create ggplot2-based plots from data.frame (bypass fortify)
+  ego_df <- as.data.frame(ego)
+  if(nrow(ego_df) > 0) {
+    topN <- min(20, nrow(ego_df))
+    plot_df <- ego_df %>% arrange(p.adjust) %>% head(topN) %>%
+      mutate(Description = factor(Description, levels = rev(Description)))
+
+    p_bar <- ggplot(plot_df, aes(x = Count, y = Description)) +
+      geom_col() +
+      labs(title = "Top GO BP (by Count)", x = "Gene Count", y = "") +
+      theme_minimal(base_size = 12)
+
+    p_dot <- ggplot(plot_df, aes(x = -log10(p.adjust), y = Description)) +
+      geom_point(aes(size = Count, color = p.adjust)) +
+      scale_color_gradient(low = "red", high = "blue") +
+      labs(title = "GO BP Enrichment (dotplot)", x = "-log10(p.adjust)", y = "") +
+      theme_minimal(base_size = 12)
+
+    # save png and pdf (use ggsave and cairo_pdf)
+    ggsave(filename = file.path(outdir, "GO_barplot_ggplot2.png"), plot = p_bar, width = 8, height = 6, dpi = 300)
+    ggsave(filename = file.path(outdir, "GO_dotplot_ggplot2.png"), plot = p_dot, width = 8, height = 6, dpi = 300)
+
+    cairo_pdf(file.path(outdir, "GO_barplot_ggplot2.pdf"), width = 8, height = 6)
+    print(p_bar); dev.off()
+
+    cairo_pdf(file.path(outdir, "GO_dotplot_ggplot2.pdf"), width = 8, height = 6)
+    print(p_dot); dev.off()
+
+    cat("GO 富集图（ggplot2）已保存（PNG & PDF）\n")
+  }
 } else {
   cat("差异基因数太少，跳过 GO 富集（需要 >=10 个 ENTREZID）\n")
 }
+
 
 # -----------------------
 # 15) 保存会话信息与结束
@@ -231,3 +269,4 @@ if(length(deg_entrez) >= 10){
 saveRDS(dds, file = file.path(outdir, "dds_object.rds"))
 saveRDS(vsd, file = file.path(outdir, "vsd_object.rds"))
 cat("All done. Results in:", outdir, "\n")
+
